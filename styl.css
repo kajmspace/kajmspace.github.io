@@ -1,0 +1,105 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+}
+.gora_tla {
+    background-color: wheat;
+    width: 100%;
+    height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.gorny_napis{
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 15px;
+    color:#333;
+    user-select: none;
+}
+.dol_tla{
+    background-color: white;
+    width: 100%;
+    min-height: 80vh;
+}
+.page-wrapper{
+    position: relative;
+    min-height: 100vh;
+}
+.profil{
+    position:absolute;
+    top:20vh;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index:10;
+}
+.profilowe{
+    width:150px;
+    height:150px;
+    border: 6px solid white;
+    border-radius: 50%;
+    background-color: wheat;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.info{
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+    color: #333;
+    max-width: 500px;
+}
+.app_logo {
+    max-width: 2rem;
+    /* border: 2px solid black; */
+    border-radius: 25%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin-right: 10px;
+}
+h2 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #888;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        }
+
+
+.item i {
+        width: 35px;
+        font-size: 1.3rem;
+        color: #555;
+    }
+
+.item {
+    display: flex;
+    align-items: center; /* To jest kluczowe dla środka pionowego */
+    justify-content: flex-start; /* Ustawia wszystko od lewej */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: normal; /* Przywraca standardową wysokość, by flex działał precyzyjnie */
+}
+
+.item a {
+    text-decoration: none;
+    color: #222;
+    transition: color 0.2s;
+    /* --- TO ROZWIĄŻE TWÓJ PROBLEM Z OBRAZKA --- */
+    margin-top: 3px; 
+    /* Dodajemy 2px od góry, co wizualnie obniży tekst "Gmail" 
+       i ustawi go idealnie w osi logo. */
+}
+
+.item a:hover {
+        color: wheat;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
