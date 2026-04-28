@@ -2,134 +2,125 @@ body, h1, h2, p {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
 }
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
 .gora_tla {
     background-color: wheat;
     width: 100%;
     height: 20vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
-    overflow: hidden;
+    align-items: center;
+    position: relative;
+    overflow: visible;
 }
+
 .gorny_napis {
-    font-size: clamp(1.5rem, 6vw, 4rem); 
+    font-size: clamp(1.5rem, 5vw, 3.5rem); 
     font-weight: 900;
     letter-spacing: clamp(5px, 1.5vw, 15px); 
     color: #333;
     user-select: none;
     text-transform: uppercase;
-    margin-top: 6vh; 
+    margin-bottom: 2vh; 
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0 10px;
 }
 
-@media (max-width: 768px) {
-    .gorny_napis {
-        /* Napis prawie pod samą górną krawędź ekranu */
-        margin-top: 1vh; 
-        
-        /* Delikatnie mniejszy font i rozstaw, żeby napis był "chudszy" w pionie */
-        font-size: 1.6rem;
-        letter-spacing: 6px;
-    }
-    
-    .profilowe {
-        /* Opcjonalnie: na telefonie możemy deko zmniejszyć zdjęcie, 
-           żeby nie było tak agresywne przy napisie */
-        width: 130px;
-        height: 130px;
-    }
-
-}
-.dol_tla{
+.dol_tla {
     background-color: white;
     width: 100%;
     min-height: 80vh;
 }
-.page-wrapper{
-    position: relative;
-    min-height: 100vh;
+
+.profil {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
 }
-.profil{
-    position:absolute;
-    top:20vh;
-    left:50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index:10;
-}
-.profilowe{
-    width:150px;
-    height:150px;
+
+.profilowe {
+    width: clamp(100px, 15vh, 150px); 
+    height: clamp(100px, 15vh, 150px);
     border: 6px solid white;
     border-radius: 50%;
     background-color: wheat;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.info{
+
+.info {
     line-height: 1.6;
-    color: #555;
-    margin-bottom: 20px;
-    margin: 100px auto 0;
-    padding: 0 20px;
-    color: #333;
     max-width: 500px;
+    margin: 0 auto;
+    padding: 12vh 20px 40px; 
+    color: #333;
 }
+
 .app_logo {
     max-width: 2rem;
-    /* border: 2px solid black; */
     border-radius: 25%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    margin-right: 10px;
+    margin-right: 12px;
 }
+
 h2 {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        color: #888;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-        }
-
-
-.item i {
-        width: 35px;
-        font-size: 1.3rem;
-        color: #555;
-    }
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #888;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
 
 .item {
     display: flex;
-    align-items: center; /* To jest kluczowe dla środka pionowego */
-    justify-content: flex-start; /* Ustawia wszystko od lewej */
+    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 15px;
     font-size: 1.1rem;
-    line-height: normal; /* Przywraca standardową wysokość, by flex działał precyzyjnie */
 }
 
 .item a {
     text-decoration: none;
     color: #222;
-    transition: color 0.2s;
-    /* --- TO ROZWIĄŻE TWÓJ PROBLEM Z OBRAZKA --- */
+    transition: all 0.2s;
     margin-top: 3px; 
-    /* Dodajemy 2px od góry, co wizualnie obniży tekst "Gmail" 
-       i ustawi go idealnie w osi logo. */
+    cursor: pointer;
 }
 
 .item a:hover {
-        color: wheat;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    }
-@media (max-width: 480px) {
-    .info {
-        margin-top: 80px; /* Zwiększ margines, żeby profilowe nie siedziało na napisach Contact */
-    }
+    color: wheat;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
     .gorny_napis {
-        margin-bottom: 40px; /* Wypycha napis wyżej nad zdjęcie profilowe */
+        margin-bottom: 1vh;
+        letter-spacing: 6px;
+    }
+    
+    .info {
+        padding-top: 10vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .gorny_napis {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
     }
 }
