@@ -20,7 +20,17 @@ body, h1, h2, p {
     letter-spacing: clamp(5px, 1.5vw, 15px); 
     color: #333;
     user-select: none;
-    margin-top: 5vh; 
+    text-transform: uppercase;
+    margin-top: 6vh; 
+}
+
+@media (max-width: 768px) {
+    .gorny_napis {
+        margin-top: 2vh; 
+        font-size: 1.8rem;
+        letter-spacing: 8px;
+    }
+    
 }
 .dol_tla{
     background-color: white;
