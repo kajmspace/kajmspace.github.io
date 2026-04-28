@@ -26,11 +26,21 @@ body, h1, h2, p {
 
 @media (max-width: 768px) {
     .gorny_napis {
-        margin-top: 2vh; 
-        font-size: 1.8rem;
-        letter-spacing: 8px;
+        /* Napis prawie pod samą górną krawędź ekranu */
+        margin-top: 1vh; 
+        
+        /* Delikatnie mniejszy font i rozstaw, żeby napis był "chudszy" w pionie */
+        font-size: 1.6rem;
+        letter-spacing: 6px;
     }
     
+    .profilowe {
+        /* Opcjonalnie: na telefonie możemy deko zmniejszyć zdjęcie, 
+           żeby nie było tak agresywne przy napisie */
+        width: 130px;
+        height: 130px;
+    }
+
 }
 .dol_tla{
     background-color: white;
