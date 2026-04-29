@@ -4,8 +4,13 @@ body, h1, h2, p {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
 .gora_tla {
-    background-color: wheat;
+    background-color: wheat; /* Zmień na #222 jeśli wolisz ciemny */
     width: 100%;
     height: 20vh;
 }
@@ -14,11 +19,6 @@ body, h1, h2, p {
     background-color: white;
     width: 100%;
     min-height: 80vh;
-}
-
-.page-wrapper {
-    position: relative;
-    min-height: 100vh;
 }
 
 .profil {
@@ -32,9 +32,10 @@ body, h1, h2, p {
 }
 
 .profilowe {
-    width: 150px;
-    height: 150px;
-    border: 6px solid white;
+    /* SKALOWANIE ZDJĘCIA: 15vh sprawia, że na niskich ekranach zdjęcie się zmniejszy */
+    width: clamp(90px, 15vh, 150px);
+    height: clamp(90px, 15vh, 150px);
+    border: 5px solid white;
     border-radius: 50%;
     background-color: wheat;
     object-fit: cover;
@@ -42,8 +43,9 @@ body, h1, h2, p {
 }
 
 .profil-tekst {
-    margin-top: 15px;
-    font-size: 1.8rem;
+    margin-top: 10px;
+    /* SKALOWANIE NAPISU */
+    font-size: clamp(1.2rem, 4vh, 1.8rem);
     font-weight: 800;
     color: #222;
     letter-spacing: -1px;
@@ -52,8 +54,8 @@ body, h1, h2, p {
 .info {
     line-height: 1.6;
     max-width: 500px;
-    /* Responsywny odstęp od napisu powyżej */
-    margin: 12vh auto 0;
+    /* ELASTYCZNY MARGINES: na niskich ekranach (jak 600px) będzie mniejszy */
+    margin: 15vh auto 0; 
     padding: 0 20px 40px; 
     color: #333;
 }
@@ -61,7 +63,7 @@ body, h1, h2, p {
 .app_logo {
     max-width: 2rem;
     border-radius: 25%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     margin-right: 12px;
 }
 
@@ -69,9 +71,9 @@ h2 {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 15px;
-    color: #888;
+    color: #999;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
@@ -87,24 +89,26 @@ h2 {
 .item a {
     text-decoration: none;
     color: #222;
-    transition: color 0.2s;
+    transition: all 0.2s;
     margin-top: 3px;
     cursor: pointer;
 }
 
 .item a:hover {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    color: #666;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Dodatkowa poprawka na bardzo małe ekrany, żeby nie było dziury */
-@media (max-height: 600px) {
+/* FIX DLA EKSTREMALNIE MAŁYCH / NISKICH EKRANÓW (np. 320x480 lub 1024x600) */
+@media (max-height: 650px) or (max-width: 480px) {
     .info {
-        margin-top: 80px;
+        margin-top: 100px; /* Stała wartość, gdy ekran jest za krótki na vh */
     }
-}
-@media (max-width: 480px) {
-    .info {
-        /* Na telefonie zwiększamy odstęp do 18vh, żeby Contact zjechał niżej */
-        margin-top: 18vh;
+    .profil-tekst {
+        font-size: 1.3rem;
+    }
+    .profilowe {
+        width: 100px;
+        height: 100px;
     }
 }
