@@ -102,3 +102,9 @@ h2 {
         margin-top: 80px;
     }
 }
+@media (max-width: 480px) {
+    .info {
+        /* Na telefonie zwiększamy odstęp do 18vh, żeby Contact zjechał niżej */
+        margin-top: 18vh;
+    }
+}
