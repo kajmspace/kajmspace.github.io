@@ -10,7 +10,7 @@ body, h1, h2, p {
 }
 
 .gora_tla {
-    background-color: wheat; /* Zmień na #222 jeśli wolisz ciemny */
+    background-color: wheat;
     width: 100%;
     height: 20vh;
 }
@@ -32,10 +32,9 @@ body, h1, h2, p {
 }
 
 .profilowe {
-    /* SKALOWANIE ZDJĘCIA: 15vh sprawia, że na niskich ekranach zdjęcie się zmniejszy */
-    width: clamp(90px, 15vh, 150px);
-    height: clamp(90px, 15vh, 150px);
-    border: 5px solid white;
+    width: 150px;
+    height: 150px;
+    border: 6px solid white;
     border-radius: 50%;
     background-color: wheat;
     object-fit: cover;
@@ -43,9 +42,8 @@ body, h1, h2, p {
 }
 
 .profil-tekst {
-    margin-top: 10px;
-    /* SKALOWANIE NAPISU */
-    font-size: clamp(1.2rem, 4vh, 1.8rem);
+    margin-top: 15px;
+    font-size: 1.8rem;
     font-weight: 800;
     color: #222;
     letter-spacing: -1px;
@@ -54,8 +52,8 @@ body, h1, h2, p {
 .info {
     line-height: 1.6;
     max-width: 500px;
-    /* ELASTYCZNY MARGINES: na niskich ekranach (jak 600px) będzie mniejszy */
-    margin: 15vh auto 0; 
+    /* Przywrócony mniejszy odstęp dla komputerów (vibe z 1. zdjęcia) */
+    margin: 60px auto 0;
     padding: 0 20px 40px; 
     color: #333;
 }
@@ -63,7 +61,7 @@ body, h1, h2, p {
 .app_logo {
     max-width: 2rem;
     border-radius: 25%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     margin-right: 12px;
 }
 
@@ -71,9 +69,9 @@ h2 {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 15px;
-    color: #999;
+    color: #888;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
@@ -89,26 +87,29 @@ h2 {
 .item a {
     text-decoration: none;
     color: #222;
-    transition: all 0.2s;
+    transition: color 0.2s;
     margin-top: 3px;
     cursor: pointer;
 }
 
 .item a:hover {
-    color: #666;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* FIX DLA EKSTREMALNIE MAŁYCH / NISKICH EKRANÓW (np. 320x480 lub 1024x600) */
-@media (max-height: 650px) or (max-width: 480px) {
+/* FIX DLA TELEFONÓW (S23 I INNE) ORAZ NISKICH ROZDZIELCZOŚCI */
+@media (max-width: 480px) or (max-height: 650px) {
     .info {
-        margin-top: 100px; /* Stała wartość, gdy ekran jest za krótki na vh */
+        /* Większy odstęp na telefonie, żeby uniknąć ścisku */
+        margin-top: 100px;
     }
-    .profil-tekst {
-        font-size: 1.3rem;
-    }
+    
     .profilowe {
-        width: 100px;
-        height: 100px;
+        /* Delikatnie mniejsze profilowe na małych ekranach */
+        width: 130px;
+        height: 130px;
+    }
+
+    .profil-tekst {
+        font-size: 1.5rem;
     }
 }
