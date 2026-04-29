@@ -4,6 +4,109 @@ body, h1, h2, p {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+.gora_tla {
+    background-color: wheat;
+    width: 100%;
+    height: 20vh;
+}
+
+.dol_tla {
+    background-color: white;
+    width: 100%;
+    min-height: 80vh;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+.profil {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+}
+
+.profilowe {
+    width: 150px;
+    height: 150px;
+    border: 6px solid white;
+    border-radius: 50%;
+    background-color: wheat;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.profil-tekst {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #222;
+    letter-spacing: -1px;
+}
+
+.info {
+    line-height: 1.6;
+    max-width: 500px;
+    /* Responsywny odstęp od napisu powyżej */
+    margin: 12vh auto 0;
+    padding: 0 20px 40px; 
+    color: #333;
+}
+
+.app_logo {
+    max-width: 2rem;
+    border-radius: 25%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin-right: 12px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #888;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.item a {
+    text-decoration: none;
+    color: #222;
+    transition: color 0.2s;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.item a:hover {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Dodatkowa poprawka na bardzo małe ekrany, żeby nie było dziury */
+@media (max-height: 600px) {
+    .info {
+        margin-top: 80px;
+    }
+}body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 .page-wrapper {
     position: relative;
     min-height: 100vh;
