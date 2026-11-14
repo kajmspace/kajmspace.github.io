@@ -47,7 +47,7 @@ body, h1, h2, p {
     /* SKALOWANIE NAPISU */
     font-size: clamp(1.2rem, 4vh, 1.8rem);
     font-weight: 800;
-    color: #222;
+    color: #303030
     letter-spacing: -1px;
 }
 
@@ -72,7 +72,7 @@ h2 {
     letter-spacing: 1px;
     margin-top: 25px;
     margin-bottom: 15px;
-    color: black;
+    color: #303030;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
